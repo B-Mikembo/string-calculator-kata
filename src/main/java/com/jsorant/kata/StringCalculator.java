@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class StringCalculator {
   public static String add(String number) {
     if(!number.isBlank()) {
-      return Arrays.stream(number.split(","))
+      return Arrays.stream(number.split("[,\\n]"))
         .map(BigDecimal::new)
         .reduce(BigDecimal::add)
         .orElse(new BigDecimal(0))

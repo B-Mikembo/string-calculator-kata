@@ -22,7 +22,8 @@ public class StringCalculatorTest {
   }
 
   @Test
-  void shouldReturnSumWhenAddThreeNumbers() {
+  void shouldReturnSumWhenAddMultipleNumbers() {
     assertThat(add("1,2,3")).isEqualTo("6");
+    assertThat(add("1,2\n3")).isEqualTo("6");
   }
 }
