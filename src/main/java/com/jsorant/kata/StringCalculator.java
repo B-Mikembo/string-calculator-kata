@@ -6,7 +6,10 @@ import java.util.Arrays;
 public class StringCalculator {
   public static String add(String number) {
     if(!number.isBlank()) {
-      return Arrays.stream(number.split("[,\\n]"))
+      var regex = "[,\\n]";
+      if(number.matches(".*" + regex + "$"))
+        throw new IllegalArgumentException("Number expected but EOF found");
+      return Arrays.stream(number.split(regex))
         .map(BigDecimal::new)
         .reduce(BigDecimal::add)
         .orElse(new BigDecimal(0))
