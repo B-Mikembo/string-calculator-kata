@@ -1,0 +1,12 @@
+package com.jsorant.kata;
+
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class StringCalculatorTest {
+  @Test
+  void shouldReturnZeroWhenAddEmptyInput() {
+    assertThat(StringCalculator.add("")).isEqualTo("0");
+  }
+}
