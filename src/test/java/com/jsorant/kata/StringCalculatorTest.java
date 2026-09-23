@@ -14,4 +14,9 @@ public class StringCalculatorTest {
   void shouldReturnSameNumberWhenAddSingleNumber() {
     assertThat(StringCalculator.add("1")).isEqualTo("1");
   }
+
+  @Test
+  void shouldReturnSumWhenAddTwoNumbers() {
+    assertThat(StringCalculator.add("1.1,2.2")).isEqualTo("3.3");
+  }
 }
