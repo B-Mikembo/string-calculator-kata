@@ -9,4 +9,9 @@ public class StringCalculatorTest {
   void shouldReturnZeroWhenAddEmptyInput() {
     assertThat(StringCalculator.add("")).isEqualTo("0");
   }
+
+  @Test
+  void shouldReturnSameNumberWhenAddSingleNumber() {
+    assertThat(StringCalculator.add("1")).isEqualTo("1");
+  }
 }
