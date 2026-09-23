@@ -1,15 +1,16 @@
 package com.jsorant.kata;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 public class StringCalculator {
   public static String add(String number) {
     if(!number.isBlank()) {
-      if(number.contains(",")) {
-        var numbers = number.split(",");
-        return String.valueOf(new BigDecimal(numbers[0]).add(new BigDecimal(numbers[1])));
-      }
-      return number;
+      return Arrays.stream(number.split(","))
+        .map(BigDecimal::new)
+        .reduce(BigDecimal::add)
+        .orElse(new BigDecimal(0))
+        .toString();
     }
     return "0";
   }
